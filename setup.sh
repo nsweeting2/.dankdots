@@ -120,7 +120,7 @@ step "Installing flatpaks"
 flatpak install -y flathub com.github.tchx84.Flatseal
 flatpak install -y flathub com.brave.Browser
 flatpak install -y flathub us.zoom.Zoom
-flatpak install -y flathub com.devolutions.RDM
+flatpak install -y flathub com.devolutions.remotedesktopmanager
 flatpak install -y flathub org.gnome.World.PikaBackup
 flatpak install -y flathub com.vscodium.codium
 success "Flatpak apps installed"
