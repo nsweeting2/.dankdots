@@ -125,11 +125,6 @@ flatpak install -y flathub org.gnome.World.PikaBackup
 flatpak install -y flathub com.vscodium.codium
 success "Flatpak apps installed"
 
-# --- Hyprpm ---
-step "Initialising hyprpm"
-hyprpm update
-success "hyprpm headers installed"
-
 # --- Copy dotfiles ---
 step "Copying dotfiles"
 
