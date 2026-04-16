@@ -1,22 +1,14 @@
 # How I setup my systems.
 
-1. Install latest CachyOS
-    1. Erase disk, choose [btrfs]
-    2. Encrypt system
-    3. Choose Hyprland compositor
-    4. Configure user and hostname
-2. Reboot System
-3. > sudo pacman -Syu
-4. Install Latest DankMaterialShell
-    1. > curl -fsSL https://install.danklinux.com | sh
-    2. Choose Hyprland
-    3. Choose Ghostty
-4. Reboot
-5. > sudo pacman -Syu
-6. Clone this repo
-    1. > git clone https://github.com/nsweeting2/.dank-dots.git
-    2. Run config.sh
-        1. > sh config.sh
-7. Reboot
+1. Install latest OS
+    - Fedora Workstation 43 Release Date: Oct 28th, 2025
+2. Reboot
+3. Complete OS Setup
 
--Jan 2026
+3. Clone this repo
+    1. > git clone https://github.com/nsweeting2/.dank-dots.git
+    2. Run setup.sh (DankMaterialShell install will prompt for compositor and terminal)
+        1. > sh setup.sh
+4. Reboot
+
+-Apr 2026

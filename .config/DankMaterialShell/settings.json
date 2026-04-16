@@ -1,32 +1,49 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
-  "customThemeFile": "",
-  "registryThemeVariants": {},
-  "matugenScheme": "scheme-monochrome",
+  "customThemeFile": "/home/nsweeting@ccc.lan/.config/DankMaterialShell/themes/modus/theme.json",
+  "registryThemeVariants": {
+    "modus": {
+      "dark": {
+        "flavor": "vivendi",
+        "accent": "red"
+      }
+    }
+  },
+  "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
-  "matugenTargetMonitor": "",
+  "matugenTargetMonitor": "DP-6",
   "popupTransparency": 1,
   "dockTransparency": 1,
-  "widgetBackgroundColor": "sc",
+  "widgetBackgroundColor": "s",
   "widgetColorMode": "default",
-  "cornerRadius": 3,
+  "controlCenterTileColorMode": "primary",
+  "buttonColorMode": "primary",
+  "cornerRadius": 2,
   "niriLayoutGapsOverride": -1,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
-  "hyprlandLayoutGapsOverride": -1,
-  "hyprlandLayoutRadiusOverride": -1,
-  "hyprlandLayoutBorderSize": -1,
+  "hyprlandLayoutGapsOverride": 15,
+  "hyprlandLayoutRadiusOverride": 2,
+  "hyprlandLayoutBorderSize": 0,
   "mangoLayoutGapsOverride": -1,
   "mangoLayoutRadiusOverride": -1,
   "mangoLayoutBorderSize": -1,
   "use24HourClock": false,
   "showSeconds": false,
+  "padHours12Hour": true,
   "useFahrenheit": true,
+  "windSpeedUnit": "kmh",
   "nightModeEnabled": false,
-  "animationSpeed": 3,
-  "customAnimationDuration": 500,
-  "wallpaperFillMode": "Fit",
+  "animationSpeed": 4,
+  "customAnimationDuration": 1000,
+  "syncComponentAnimationSpeeds": false,
+  "popoutAnimationSpeed": 4,
+  "popoutCustomAnimationDuration": 1000,
+  "modalAnimationSpeed": 4,
+  "modalCustomAnimationDuration": 1000,
+  "enableRippleEffects": true,
+  "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
   "showLauncherButton": true,
@@ -58,6 +75,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -89,29 +107,43 @@
   "showWorkspacePadding": true,
   "workspaceScrolling": false,
   "showWorkspaceApps": false,
+  "workspaceDragReorder": true,
   "maxWorkspaceIcons": 3,
+  "workspaceAppIconSizeOffset": 0,
   "groupWorkspaceApps": true,
   "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": false,
   "reverseScrolling": false,
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
+  "workspaceOccupiedColorMode": "none",
   "workspaceUnfocusedColorMode": "default",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
   "workspaceFocusedBorderColor": "surfaceText",
   "workspaceFocusedBorderThickness": 1,
   "workspaceNameIcons": {},
-  "waveProgressEnabled": true,
+  "waveProgressEnabled": false,
   "scrollTitleEnabled": true,
-  "audioVisualizerEnabled": true,
+  "audioVisualizerEnabled": false,
   "audioScrollMode": "volume",
+  "audioWheelScrollAmount": 5,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": false,
+  "barMaxVisibleApps": 0,
+  "barMaxVisibleRunningApps": 0,
+  "barShowOverflowBadge": true,
+  "appsDockHideIndicators": false,
+  "appsDockColorizeActive": false,
+  "appsDockActiveColorMode": "primary",
+  "appsDockEnlargeOnHover": false,
+  "appsDockEnlargePercentage": 125,
+  "appsDockIconSizePercentage": 100,
   "keyboardLayoutNameCompactMode": false,
   "runningAppsCurrentWorkspace": true,
   "runningAppsGroupByApp": false,
+  "runningAppsCurrentMonitor": false,
   "appIdSubstitutions": [
     {
       "pattern": "Spotify",
@@ -142,21 +174,43 @@
   "centeringMode": "geometric",
   "clockDateFormat": "dddd, MMMM d",
   "lockDateFormat": "dddd, MMMM d",
+  "greeterRememberLastSession": true,
+  "greeterRememberLastUser": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
+  "greeterWallpaperPath": "",
+  "greeterUse24HourClock": true,
+  "greeterShowSeconds": false,
+  "greeterPadHours12Hour": false,
+  "greeterLockDateFormat": "",
+  "greeterFontFamily": "",
+  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
+  "browserPickerViewMode": "grid",
+  "browserUsageHistory": {},
+  "appPickerViewMode": "grid",
+  "filePickerUsageHistory": {},
   "sortAppsAlphabetically": true,
   "appLauncherGridColumns": 8,
   "spotlightCloseNiriOverview": true,
+  "spotlightSectionViewModes": {},
+  "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
+  "dankLauncherV2Size": "large",
+  "dankLauncherV2BorderEnabled": true,
+  "dankLauncherV2BorderThickness": 1,
+  "dankLauncherV2BorderColor": "primary",
+  "dankLauncherV2ShowFooter": true,
+  "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
-  "vpnLastConnected": "",
   "iconTheme": "Adwaita",
   "cursorSettings": {
     "theme": "Adwaita",
-    "size": 24,
+    "size": 32,
     "niri": {
       "hideWhenTyping": false,
       "hideAfterInactiveMs": 0
@@ -177,10 +231,10 @@
   "launcherLogoBrightness": 0.5,
   "launcherLogoContrast": 1,
   "launcherLogoSizeOffset": 12,
-  "fontFamily": "Noto Sans Test",
+  "fontFamily": "Noto Sans Medium",
   "monoFontFamily": "Noto Sans Mono",
   "fontWeight": 400,
-  "fontScale": 1,
+  "fontScale": 1.05,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
@@ -188,7 +242,7 @@
   "notepadTransparencyOverride": -1,
   "notepadLastCustomTransparency": 0.7,
   "soundsEnabled": true,
-  "useSystemSoundTheme": false,
+  "useSystemSoundTheme": true,
   "soundNewNotification": true,
   "soundVolumeChanged": true,
   "soundPluggedIn": true,
@@ -240,8 +294,11 @@
   "matugenTemplateDgop": true,
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
+  "matugenTemplateEmacs": true,
+  "matugenTemplateZed": true,
   "showDock": false,
   "dockAutoHide": false,
+  "dockSmartAutoHide": false,
   "dockGroupByApp": false,
   "dockOpenOnOverview": false,
   "dockPosition": 1,
@@ -255,35 +312,56 @@
   "dockBorderOpacity": 1,
   "dockBorderThickness": 1,
   "dockIsolateDisplays": false,
-  "notificationOverlayEnabled": false,
+  "dockLauncherEnabled": false,
+  "dockLauncherLogoMode": "apps",
+  "dockLauncherLogoCustomPath": "",
+  "dockLauncherLogoColorOverride": "",
+  "dockLauncherLogoSizeOffset": 0,
+  "dockLauncherLogoBrightness": 0.5,
+  "dockLauncherLogoContrast": 1,
+  "dockMaxVisibleApps": 0,
+  "dockMaxVisibleRunningApps": 0,
+  "dockShowOverflowBadge": true,
+  "notificationOverlayEnabled": true,
+  "notificationPopupShadowEnabled": true,
+  "notificationPopupPrivacyMode": true,
   "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
   "lockScreenShowSystemIcons": true,
   "lockScreenShowTime": true,
   "lockScreenShowDate": true,
   "lockScreenShowProfileImage": true,
-  "lockScreenShowPasswordField": true,
+  "lockScreenShowPasswordField": false,
+  "lockScreenShowMediaPlayer": false,
+  "lockScreenPowerOffMonitorsOnLock": true,
+  "lockAtStartup": false,
   "enableFprint": false,
   "maxFprintTries": 3,
+  "enableU2f": false,
+  "u2fMode": "or",
   "lockScreenActiveMonitor": "all",
-  "lockScreenInactiveColor": "#000000",
+  "lockScreenInactiveColor": "#73d35400",
   "lockScreenNotificationMode": 0,
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
-  "notificationPopupPosition": 0,
+  "notificationPopupPosition": -1,
+  "notificationAnimationSpeed": 3,
+  "notificationCustomAnimationDuration": 400,
   "notificationHistoryEnabled": true,
   "notificationHistoryMaxCount": 50,
   "notificationHistoryMaxAgeDays": 7,
   "notificationHistorySaveLow": true,
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
+  "notificationRules": [],
   "osdAlwaysShowValue": true,
   "osdPosition": 0,
   "osdVolumeEnabled": true,
   "osdMediaVolumeEnabled": true,
+  "osdMediaPlaybackEnabled": false,
   "osdBrightnessEnabled": true,
   "osdIdleInhibitorEnabled": true,
   "osdMicMuteEnabled": true,
@@ -316,14 +394,58 @@
     "dankBar": [
       "all"
     ],
-    "dock": []
+    "dock": [],
+    "osd": [
+      {
+        "name": "DP-8",
+        "model": "DELL P2722H",
+        "modelIndex": 1
+      }
+    ],
+    "notifications": [
+      "all"
+    ],
+    "toast": [
+      "all"
+    ],
+    "notepad": [
+      {
+        "name": "DP-8",
+        "model": "DELL P2722H",
+        "modelIndex": 1
+      }
+    ]
   },
   "showOnLastDisplay": {
     "dankBar": true,
-    "dock": false
+    "dock": false,
+    "osd": false,
+    "notifications": true,
+    "toast": true
   },
   "niriOutputSettings": {},
   "hyprlandOutputSettings": {},
+  "displayProfiles": {
+    "hyprland": {
+      "profile_1773771247796_cogm3o": {
+        "id": "profile_1773771247796_cogm3o",
+        "name": "Default",
+        "outputSet": [
+          "DP-5",
+          "DP-6",
+          "DP-8"
+        ],
+        "createdAt": 1773771247796,
+        "updatedAt": 1773771247796
+      }
+    }
+  },
+  "activeDisplayProfile": {
+    "hyprland": "profile_1773771247796_cogm3o"
+  },
+  "displayProfileAutoSelect": false,
+  "displayShowDisconnected": true,
+  "displaySnapToEdge": true,
   "barConfigs": [
     {
       "id": "default",
@@ -334,206 +456,6 @@
         {
           "name": "DP-1",
           "model": "DELL P2722H",
-          "modelIndex": 0
-        }
-      ],
-      "showOnLastDisplay": true,
-      "leftWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "launcherButton",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        }
-      ],
-      "centerWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "runningApps",
-          "enabled": true,
-          "runningAppsCompactMode": false
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        }
-      ],
-      "rightWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        },
-        {
-          "id": "clipboard",
-          "enabled": true
-        },
-        {
-          "id": "notepadButton",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "weather",
-          "enabled": true
-        },
-        {
-          "id": "clock",
-          "enabled": true
-        },
-        {
-          "id": "controlCenterButton",
-          "enabled": true
-        }
-      ],
-      "spacing": 0,
-      "innerPadding": 0,
-      "bottomGap": 10,
-      "transparency": 1,
-      "widgetTransparency": 1,
-      "squareCorners": true,
-      "noBackground": false,
-      "gothCornersEnabled": false,
-      "gothCornerRadiusOverride": false,
-      "gothCornerRadiusValue": 12,
-      "borderEnabled": false,
-      "borderColor": "secondary",
-      "borderOpacity": 1,
-      "borderThickness": 2,
-      "fontScale": 1.1,
-      "autoHide": false,
-      "autoHideDelay": 250,
-      "openOnOverview": false,
-      "visible": true,
-      "popupGapsAuto": true,
-      "popupGapsManual": 4,
-      "scrollYBehavior": "workspace",
-      "scrollEnabled": false,
-      "widgetOutlineEnabled": false,
-      "widgetOutlineColor": "secondary"
-    },
-    {
-      "id": "bar1768326349802",
-      "name": "Bar 2",
-      "enabled": true,
-      "position": 0,
-      "screenPreferences": [
-        {
-          "name": "DP-1",
-          "model": "DELL P2722H",
-          "modelIndex": 0
-        }
-      ],
-      "showOnLastDisplay": false,
-      "leftWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "music",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        }
-      ],
-      "centerWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "privacyIndicator",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        }
-      ],
-      "rightWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        },
-        {
-          "id": "workspaceSwitcher",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        }
-      ],
-      "spacing": 0,
-      "innerPadding": 0,
-      "bottomGap": 10,
-      "transparency": 1,
-      "widgetTransparency": 1,
-      "squareCorners": true,
-      "noBackground": false,
-      "gothCornersEnabled": false,
-      "gothCornerRadiusOverride": false,
-      "gothCornerRadiusValue": 12,
-      "borderEnabled": false,
-      "borderColor": "secondary",
-      "borderOpacity": 1,
-      "borderThickness": 2,
-      "widgetOutlineEnabled": false,
-      "widgetOutlineColor": "secondary",
-      "widgetOutlineOpacity": 1,
-      "widgetOutlineThickness": 1,
-      "fontScale": 1.1,
-      "autoHide": false,
-      "autoHideDelay": 250,
-      "showOnWindowsOpen": false,
-      "openOnOverview": false,
-      "visible": true,
-      "popupGapsAuto": true,
-      "popupGapsManual": 4,
-      "maximizeDetection": true,
-      "scrollEnabled": false,
-      "scrollXBehavior": "column",
-      "scrollYBehavior": "workspace",
-      "shadowIntensity": 0,
-      "shadowOpacity": 60,
-      "shadowColorMode": "text",
-      "shadowCustomColor": "#000000"
-    },
-    {
-      "id": "bar1768326471129",
-      "name": "Bar 3",
-      "enabled": true,
-      "position": 1,
-      "screenPreferences": [
-        {
-          "name": "DP-2",
-          "model": "DELL P2722H",
           "modelIndex": 1
         }
       ],
@@ -547,163 +469,43 @@
         {
           "id": "launcherButton",
           "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
         }
       ],
       "centerWidgets": [
         {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "runningApps",
-          "enabled": true,
-          "runningAppsCompactMode": false
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
+          "id": "workspaceSwitcher",
+          "enabled": true
         }
       ],
       "rightWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        },
-        {
-          "id": "clipboard",
-          "enabled": true
-        },
-        {
-          "id": "notepadButton",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "weather",
-          "enabled": true
-        },
         {
           "id": "clock",
           "enabled": true
         },
         {
-          "id": "controlCenterButton",
-          "enabled": true
-        }
-      ],
-      "spacing": 0,
-      "innerPadding": 0,
-      "bottomGap": 10,
-      "transparency": 1,
-      "widgetTransparency": 1,
-      "squareCorners": true,
-      "noBackground": false,
-      "gothCornersEnabled": false,
-      "gothCornerRadiusOverride": false,
-      "gothCornerRadiusValue": 12,
-      "borderEnabled": false,
-      "borderColor": "secondary",
-      "borderOpacity": 1,
-      "borderThickness": 2,
-      "widgetOutlineEnabled": false,
-      "widgetOutlineColor": "secondary",
-      "widgetOutlineOpacity": 1,
-      "widgetOutlineThickness": 1,
-      "fontScale": 1.1,
-      "autoHide": false,
-      "autoHideDelay": 250,
-      "showOnWindowsOpen": false,
-      "openOnOverview": false,
-      "visible": true,
-      "popupGapsAuto": true,
-      "popupGapsManual": 4,
-      "maximizeDetection": true,
-      "scrollEnabled": false,
-      "scrollXBehavior": "column",
-      "scrollYBehavior": "workspace",
-      "shadowIntensity": 0,
-      "shadowOpacity": 60,
-      "shadowColorMode": "text",
-      "shadowCustomColor": "#000000"
-    },
-    {
-      "id": "bar1768326586951",
-      "name": "Bar 4",
-      "enabled": true,
-      "position": 0,
-      "screenPreferences": [
-        {
-          "name": "DP-2",
-          "model": "DELL P2722H",
-          "modelIndex": 1
-        }
-      ],
-      "showOnLastDisplay": false,
-      "leftWidgets": [
-        {
           "id": "spacer",
           "enabled": true,
           "size": 5
-        },
-        {
-          "id": "workspaceSwitcher",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        }
-      ],
-      "centerWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        },
-        {
-          "id": "clipboard",
-          "enabled": true
-        },
-        {
-          "id": "privacyIndicator",
-          "enabled": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 5
-        }
-      ],
-      "rightWidgets": [
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 15
-        },
-        {
-          "id": "notificationButton",
-          "enabled": true
         },
         {
           "id": "systemUpdate",
           "enabled": true
         },
         {
-          "id": "powerMenuButton",
-          "enabled": true
+          "id": "controlCenterButton",
+          "enabled": true,
+          "showNetworkIcon": false,
+          "showBluetoothIcon": false,
+          "showAudioIcon": false,
+          "showAudioPercent": false,
+          "showVpnIcon": true,
+          "showBrightnessIcon": false,
+          "showBrightnessPercent": false,
+          "showMicIcon": false,
+          "showMicPercent": false,
+          "showBatteryIcon": false,
+          "showPrinterIcon": false,
+          "showScreenSharingIcon": true
         },
         {
           "id": "spacer",
@@ -711,34 +513,94 @@
           "size": 5
         }
       ],
-      "spacing": 0,
+      "spacing": 12,
       "innerPadding": 0,
-      "bottomGap": 10,
+      "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
-      "squareCorners": true,
+      "squareCorners": false,
       "noBackground": false,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
       "borderEnabled": false,
-      "borderColor": "secondary",
+      "borderColor": "surfaceText",
+      "borderOpacity": 1,
+      "borderThickness": 2,
+      "fontScale": 1.25,
+      "autoHide": false,
+      "autoHideDelay": 1000,
+      "openOnOverview": false,
+      "visible": true,
+      "popupGapsAuto": true,
+      "popupGapsManual": 4,
+      "scrollYBehavior": "workspace",
+      "scrollEnabled": true,
+      "widgetOutlineEnabled": false,
+      "widgetOutlineColor": "secondary",
+      "maximizeDetection": false,
+      "iconScale": 1.15,
+      "widgetPadding": 8
+    },
+    {
+      "id": "bar1776107001589",
+      "name": "Bar 2",
+      "enabled": true,
+      "position": 1,
+      "screenPreferences": [
+        {
+          "name": "DP-2",
+          "model": "DELL P2722H",
+          "modelIndex": 2
+        },
+        {
+          "name": "DP-3",
+          "model": "DELL P2722H",
+          "modelIndex": 0
+        }
+      ],
+      "showOnLastDisplay": false,
+      "leftWidgets": [],
+      "centerWidgets": [
+        {
+          "id": "workspaceSwitcher",
+          "enabled": true
+        }
+      ],
+      "rightWidgets": [],
+      "spacing": 12,
+      "innerPadding": 0,
+      "bottomGap": 0,
+      "transparency": 1,
+      "widgetTransparency": 1,
+      "squareCorners": false,
+      "noBackground": false,
+      "gothCornersEnabled": false,
+      "gothCornerRadiusOverride": false,
+      "gothCornerRadiusValue": 12,
+      "borderEnabled": false,
+      "borderColor": "surfaceText",
       "borderOpacity": 1,
       "borderThickness": 2,
       "widgetOutlineEnabled": false,
       "widgetOutlineColor": "secondary",
       "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 1,
-      "fontScale": 1.1,
+      "widgetPadding": 8,
+      "maximizeWidgetIcons": false,
+      "maximizeWidgetText": false,
+      "removeWidgetPadding": false,
+      "fontScale": 1.25,
+      "iconScale": 1,
       "autoHide": false,
-      "autoHideDelay": 250,
+      "autoHideDelay": 1000,
       "showOnWindowsOpen": false,
       "openOnOverview": false,
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
-      "maximizeDetection": true,
-      "scrollEnabled": false,
+      "maximizeDetection": false,
+      "scrollEnabled": true,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
@@ -830,5 +692,8 @@
       "enabled": true
     }
   },
+  "clipboardEnterToPaste": false,
+  "launcherPluginVisibility": {},
+  "launcherPluginOrder": [],
   "configVersion": 5
 }
