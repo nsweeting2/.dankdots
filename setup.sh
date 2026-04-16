@@ -33,9 +33,9 @@ success() {
     echo "    ${GREEN}✓${RESET} $1"
 }
 
-# --- Banner ---
+# --- Banner ---reboot
 echo ""
-echo "${BOLD}${GREEN}  ·  dankdots${RESET}"
+echo "${BOLD}${GREEN}  ·  dankdots  ·  NSWEETING2${RESET}"
 echo "${YELLOW}     Fedora · DankMaterialShell · Hyprland${RESET}"
 echo ""
 
@@ -124,6 +124,13 @@ flatpak install -y flathub com.devolutions.remotedesktopmanager
 flatpak install -y flathub org.gnome.World.PikaBackup
 flatpak install -y flathub com.vscodium.codium
 success "Flatpak apps installed"
+
+# --- Hyprpm + hyprbars ---
+step "Setting up hyprpm and installing hyprbars"
+hyprpm update
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm enable hyprbars
+success "hyprbars installed"
 
 # --- Copy dotfiles ---
 step "Copying dotfiles"
