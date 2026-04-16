@@ -41,6 +41,10 @@ echo ""
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# --- Grab sudo upfront and keep it alive for the duration of the script ---
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # --- Third-party repositories ---
 step "Checking third-party repositories"
 
