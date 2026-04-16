@@ -125,25 +125,25 @@ flatpak install -y flathub org.gnome.World.PikaBackup
 flatpak install -y flathub com.vscodium.codium
 success "Flatpak apps installed"
 
-# --- Symlink dotfiles ---
-step "Symlinking dotfiles"
+# --- Copy dotfiles ---
+step "Copying dotfiles"
 
 mkdir -p ~/.config/DankMaterialShell
-ln -sf "$DOTFILES_DIR/.config/DankMaterialShell/settings.json" \
+cp "$DOTFILES_DIR/.config/DankMaterialShell/settings.json" \
     ~/.config/DankMaterialShell/settings.json
-info "~/.dankdots/.config/DankMaterialShell/settings.json → ~/.config/DankMaterialShell/settings.json"
+info "Copied ~/.config/DankMaterialShell/settings.json"
 
 mkdir -p ~/.config/hypr/dms
-ln -sf "$DOTFILES_DIR/.config/hypr/hyprland.conf" \
+cp "$DOTFILES_DIR/.config/hypr/hyprland.conf" \
     ~/.config/hypr/hyprland.conf
-info "~/.dankdots/.config/hypr/hyprland.conf → ~/.config/hypr/hyprland.conf"
+info "Copied ~/.config/hypr/hyprland.conf"
 
 for conf in "$DOTFILES_DIR/.config/hypr/dms/"*.conf; do
-    ln -sf "$conf" ~/.config/hypr/dms/"$(basename "$conf")"
-    info "~/.dankdots/.config/hypr/dms/$(basename "$conf") → ~/.config/hypr/dms/$(basename "$conf")"
+    cp "$conf" ~/.config/hypr/dms/"$(basename "$conf")"
+    info "Copied ~/.config/hypr/dms/$(basename "$conf")"
 done
 
-success "Dotfiles symlinked"
+success "Dotfiles copied"
 
 echo ""
 echo "${BOLD}${GREEN}  ✓  Setup complete. Reboot when ready.${RESET}"
