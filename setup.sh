@@ -41,14 +41,6 @@ echo ""
 
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# --- DankMaterialShell ---
-step "Installing DankMaterialShell"
-info "Compositor: Hyprland  |  Terminal: Ghostty"
-curl -fsSL https://install.danklinux.com -o /tmp/dms_install.sh
-COMPOSITOR=hyprland TERMINAL=ghostty sh /tmp/dms_install.sh
-rm -f /tmp/dms_install.sh
-success "DankMaterialShell installed"
-
 # --- Third-party repositories ---
 step "Checking third-party repositories"
 
@@ -81,8 +73,29 @@ step "Upgrading system packages"
 sudo dnf upgrade -y
 success "System up to date"
 
+# --- DankMaterialShell ---
+step "Installing DankMaterialShell"
+
+sudo dnf copr enable -y avengemedia/dms
+sudo dnf copr enable -y avengemedia/danklinux
+sudo dnf copr enable -y sdegler/hyprland
+
+sudo dnf install -y \
+    dms \
+    dms-cli \
+    dms-greeter \
+    ghostty \
+    hyprland \
+    quickshell \
+    matugen \
+    dgop \
+    danksearch
+
+dms greeter enable
+success "DankMaterialShell installed"
+
 # --- DNF packages ---
-step "Installing dnf packages"
+step "Installing additional dnf packages"
 sudo dnf install -y \
     btop \
     cmake \
@@ -99,7 +112,7 @@ sudo dnf install -y \
 success "dnf packages installed"
 
 # --- Flatpak apps ---
-step "Installing flatpak apps"
+step "Installing flatpaks"
 flatpak install -y flathub com.github.tchx84.Flatseal
 flatpak install -y flathub com.brave.Browser
 flatpak install -y flathub us.zoom.Zoom
@@ -110,22 +123,23 @@ success "Flatpak apps installed"
 
 # --- Symlink dotfiles ---
 step "Symlinking dotfiles"
+
 mkdir -p ~/.config/DankMaterialShell
-ln -sf "$DOTFILES_DIR/dotfiles/config/DankMaterialShell/settings.json" \
+ln -sf "$DOTFILES_DIR/.config/DankMaterialShell/settings.json" \
     ~/.config/DankMaterialShell/settings.json
-info "DankMaterialShell settings → ~/.config/DankMaterialShell/settings.json"
+info "~/.dankdots/.config/DankMaterialShell/settings.json → ~/.config/DankMaterialShell/settings.json"
 
-mkdir -p ~/.config/hypr
-ln -sf "$DOTFILES_DIR/dotfiles/config/hypr/hyprland.conf" \
+mkdir -p ~/.config/hypr/dms
+ln -sf "$DOTFILES_DIR/.config/hypr/hyprland.conf" \
     ~/.config/hypr/hyprland.conf
-info "Hyprland config    → ~/.config/hypr/hyprland.conf"
-success "Dotfiles symlinked"
+info "~/.dankdots/.config/hypr/hyprland.conf → ~/.config/hypr/hyprland.conf"
 
-# --- Wallpapers ---
-step "Copying wallpapers"
-mkdir -p ~/Wallpapers
-cp -rp "$DOTFILES_DIR/Wallpapers/"* ~/Wallpapers/
-success "Wallpapers copied to ~/Wallpapers"
+for conf in "$DOTFILES_DIR/.config/hypr/dms/"*.conf; do
+    ln -sf "$conf" ~/.config/hypr/dms/"$(basename "$conf")"
+    info "~/.dankdots/.config/hypr/dms/$(basename "$conf") → ~/.config/hypr/dms/$(basename "$conf")"
+done
+
+success "Dotfiles symlinked"
 
 echo ""
 echo "${BOLD}${GREEN}  ✓  Setup complete. Reboot when ready.${RESET}"
