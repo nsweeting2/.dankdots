@@ -112,7 +112,8 @@ sudo dnf install -y \
     libinput-devel \
     libicu-devel \
     freerdp \
-    btrfs-assistant
+    btrfs-assistant \
+    nautilus-admin-gtk4
 success "dnf packages installed"
 
 # --- Flatpak apps ---
