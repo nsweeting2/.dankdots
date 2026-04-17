@@ -10,7 +10,6 @@
 # --- System Prep ---
 # [X] Install Fedora
 # [ ] Set a hostname
-# [ ] Confirm Timezone & locale are configured
 # [ ] Enable RPM Fusion repos free and non-free
 # [ ] Enable Flathub for flapaks
 # [ ] Run DNF update
@@ -18,6 +17,7 @@
 # --- Hyprland + Wayland Stack ----
 # [ ] Add hyprland COPR repo
 # [ ] Install hyprland
+# [ ] Add ghostty COPR repo
 # [ ] Install kitty & ghostty
 # [ ] Install xdg-desktop-portal-hyprland
 # [ ] Install hyprpm dependancies
@@ -109,34 +109,6 @@ done
 sudo hostnamectl set-hostname "$hostname"
 info "Hostname set to $hostname"
 
-# [ ] Confirm Timezone & locale are configured
-current_tz=$(timedatectl show | grep ^Timezone= | cut -d= -f2)
-read -r -p "    Timezone [${BOLD}$current_tz${RESET}]: " new_tz
-if [[ -n "$new_tz" ]]; then
-    if timedatectl list-timezones | grep -qx "$new_tz"; then
-        sudo timedatectl set-timezone "$new_tz"
-        info "Timezone set to $new_tz"
-    else
-        sudo timedatectl set-timezone "America/New_York"
-        issue "Invalid timezone — defaulting to America/New_York"
-    fi
-else
-    info "Timezone kept as $current_tz"
-fi
-
-current_locale=$(localectl show | grep ^LANG= | cut -d= -f2)
-read -r -p "    Locale [${BOLD}$current_locale${RESET}]: " new_locale
-if [[ -n "$new_locale" ]]; then
-    if localectl list-locales | grep -qx "$new_locale"; then
-        sudo localectl set-locale LANG="$new_locale"
-        info "Locale set to $new_locale"
-    else
-        sudo localectl set-locale LANG="en_US.UTF-8"
-        issue "Invalid locale — defaulting to en_US.UTF-8"
-    fi
-else
-    info "Locale kept as $current_locale"
-fi
 
 # [ ] Enable RPM Fusion repos free and nonfree
 if ! rpm -q rpmfusion-free-release &>/dev/null; then
@@ -178,6 +150,9 @@ sudo dnf copr enable -y sdegler/hyprland
 
 # [ ] Install hyprland
 sudo dnf install -y hyprland
+
+# [ ] Add ghostty COPR repo
+sudo dnf copr enable -y scottames/ghostty
 
 # [ ] Install kitty & ghostty
 sudo dnf install -y kitty ghostty
