@@ -222,6 +222,30 @@ done
 info " --- Terminal & Shell Configured ---- "
 
 # exit 0  # Debug Exit
+info " --- Fonts & Icons ---- "
+
+# JetBrains Mono (base)
+sudo dnf install -y jetbrains-mono-fonts
+
+# JetBrainsMono Nerd Font (patched with icons)
+mkdir -p ~/.local/share/fonts/JetBrainsMonoNF
+curl -fLo /tmp/JetBrainsMono.zip \
+    https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+unzip -o /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMonoNF/
+rm /tmp/JetBrainsMono.zip
+
+# Noto fonts (broad unicode + emoji coverage)
+sudo dnf install -y \
+    google-noto-sans-fonts \
+    google-noto-emoji-color-fonts
+
+# Icon theme
+sudo dnf install -y papirus-icon-theme
+
+fc-cache -fv
+success " --- Fonts & Icons Installed ---- "
+
+# exit 0  # Debug Exit
 info " --- Applications ---- "
 
 # [ ] Install with DNF
