@@ -110,7 +110,7 @@ sudo hostnamectl set-hostname "$hostname"
 info "Hostname set to $hostname"
 
 # [ ] Confirm Timezone & locale are configured
-current_tz=$(timedatectl show --property=Timezone --value)
+current_tz=$(timedatectl show | grep ^Timezone= | cut -d= -f2)
 read -r -p "    Timezone [${BOLD}$current_tz${RESET}]: " new_tz
 if [[ -n "$new_tz" ]]; then
     if timedatectl list-timezones | grep -qx "$new_tz"; then
@@ -124,7 +124,7 @@ else
     info "Timezone kept as $current_tz"
 fi
 
-current_locale=$(localectl show --property=LANG --value)
+current_locale=$(localectl show | grep ^LANG= | cut -d= -f2)
 read -r -p "    Locale [${BOLD}$current_locale${RESET}]: " new_locale
 if [[ -n "$new_locale" ]]; then
     if localectl list-locales | grep -qx "$new_locale"; then
