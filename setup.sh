@@ -251,6 +251,7 @@ info "Copied ~/.config/DankMaterialShell/settings.json"
 
 
 # [ ] My hypr/hyprland.conf file copied in
+mkdir -p ~/.config/hypr
 cp "$DOTFILES_DIR/.config/hypr/hyprland.conf" \
     ~/.config/hypr/hyprland.conf
 info "Copied ~/.config/hypr/hyprland.conf"
