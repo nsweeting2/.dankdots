@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# setup.sh - Post-install setup for Fedora + DankMaterialShell/Hyprland
+# setup.sh - Post-install setup for Fedora|DankMaterialShell|Hyprland
 # Author: nsweeting2
 
-# =============================================================================
-# FEDORA | DMS | HYPRLAND : SETUP OUTLINE
-# =============================================================================
+# ============== #
+# SETUP OUTLINE  #
+# ============== #
 
-# --- System Prep -------------------------------------------------------------
+# --- System Prep ---
 # [X] Install Fedora
 # [ ] Set a hostname
 # [ ] Confirm Timezone & locale are configured
@@ -23,77 +23,41 @@
 # [ ] Install hyprpm dependancies
 
 # --- DankMaterialShell Setup ----
-# [ ] DankLinux COPR repos added
+# [ ] Add DankLinux COPR repos
 # [ ] Install DankMaterialShell
-
-# [ ] DMS systemd user service enabled
+# [ ] Enable dms as a systemd user service
+# [ ] Install dms-greeter
+# [ ] Enable dms-greeter with dms-cli
 # [ ] DMS settings.json copied in
-# [ ] Hyprland config files copied in
-# [ ] DMS Hyprland config files copied in
 
+# --- Terminal & Shell ---
+# [ ] Confirm we have kitty & ghostty
+# [ ] Install bash-completion & blesh
+# [ ] Install zfz, bat, ripgrep, eza
+# [ ] Add alaiases to .bashrc
 
+# --- Applications ----
+# [ ] Install with DNF
+#  -  btop
+#  -  freerdp
+#  -  btrfs-assistant
+# [ ] Install Flatpaks
+#  -  com.github.tchx84.Flatseal
+#  -  com.brave.Browser
+#  -  us.zoom.Zoom
+#  -  com.devolutions.remotedesktopmanager
+#  -  org.gnome.World.PikaBackup
+#  -  com.vscodium.codium
 
-# --- Fonts & Theming ---------------------------------------------------------
-# [ ] Nerd Font installed
-# [ ] Font cache refreshed
-# [ ] GTK & Qt colors via DMS + matugen
-# [ ] Icon theme set
-# [ ] Cursor theme set
-# [ ] Qt env vars set if needed
-
-# --- Terminal & Shell --------------------------------------------------------
-# [ ] Terminal emulator installed
-# [ ] Default shell set
-# [ ] Shell framework configured
-# [ ] Prompt configured
-# [ ] tmux / zellij configured
-# [ ] Core CLI tools installed
-# [ ] Editor configured
-
-# --- Applications ------------------------------------------------------------
-# [ ] Web browser installed
-# [ ] File manager installed
-# [ ] Screenshots via DMS
-# [ ] Clipboard via DMS
-# [ ] Notifications via DMS
-# [ ] Image viewer installed
-# [ ] Media player installed
-# [ ] Office / productivity apps installed
-# [ ] Flatpak permissions reviewed
-
-# --- Development -------------------------------------------------------------
-# [ ] Git configured
-# [ ] SSH key added to GitHub / GitLab
-# [ ] Language runtimes installed
-# [ ] Container tooling installed
-# [ ] Editor extensions installed
-# [ ] Dotfiles repo cloned & symlinked
-
-# --- Security & Maintenance --------------------------------------------------
-# [ ] LUKS disk encryption set up
+# --- Security & Maintenance ---
 # [ ] sudo / polkit rules reviewed
 # [ ] DNF auto-updates configured
 # [ ] Snapshots configured
-# [ ] BTRFS subvolume layout clean
-# [ ] Flatpak permissions reviewed
-# [ ] Swap / zram configured
 
-# --- QoL & Polish ------------------------------------------------------------
-# [ ] Power management configured
-# [ ] Bluetooth configured
-# [ ] Printer / scanner set up
-# [ ] USB auto-mount working
-# [ ] Polkit agent running
-# [ ] System tray working
-# [ ] Keyboard layout & repeat rate set
-# [ ] Touchpad gestures configured
-# [ ] Night light configured
-# [ ] Dotfiles backed up
-# [ ] dgop.desktop
-# [ ] bash completion and blesh
+# --- Misc Configuration ---
+# [ ] My hypr/hyprland.conf file copied in
+# [ ] My hypr/dms/*.conf files copied in
 
-
-# =============================================================================
 
 # --- Exit if we error on anything ---
 set -e
@@ -206,6 +170,7 @@ sudo dnf upgrade -y
 
 success " --- System Prep Complete --- "
 
+# exit 0  # Debug Exit
 info " --- Hyprland + Wayland Stack ---- "
 
 # [ ] Add hyprland COPR repo
@@ -221,52 +186,78 @@ sudo dnf install -y kitty ghostty
 sudo dnf install -y xdg-desktop-portal-hyprland
 
 # [ ] Install hyprpm dependancies
-sudo dnf install cmake cpio meson gcc-c++ hyprland-devel wayland-devel wayland-protocols-devel libinput-devel libicu-devel
+sudo dnf install -y cmake cpio meson gcc-c++ hyprland-devel wayland-devel wayland-protocols-devel libinput-devel libicu-devel
 
 success " --- Hyprland + Wayland Stack Installed --- "
 
+# exit 0  # Debug Exit
 info " --- DankMaterialShell Setup ---- "
 
-exit 0  #Debug Exit
-
-
-
-
-# --- DankMaterialShell ---
-step "Installing DankMaterialShell"
-
+# [ ] Add DankLinux COPR repos
 sudo dnf copr enable -y avengemedia/dms
 sudo dnf copr enable -y avengemedia/danklinux
 
-
+# [ ] Install DankMaterialShell
 sudo dnf install -y dms
 
-sudo dnf install -y ghostty
+# [ ] Enable dms as a systemd user service
+systemctl --user enable dms
 
-
-dms setup --compositor hyprland
-
+# [ ] Install dms-greeter
 sudo dnf install -y dms-greeter
+
+# [ ] Enable dms-greeter with dms-cli
 dms greeter enable
 
-systemctl --user enable dms
-success "DankMaterialShell installed"
+success " --- DankMaterialShell Setup Complete --- "
+
+# exit 0  # Debug Exit
+info " --- Terminal & Shell ---- "
+
+# [ ] Confirm we have kitty ghostty &
+sudo dnf install -y kitty ghostty
+
+# [ ] Install bash-completion & blesh
+sudo dnf install -y bash-completion blesh
+
+# [ ] Install fzf, bat, ripgrep, eza
+sudo dnf install -y fzf bat ripgrep eza
+
+# [ ] Add alias' to .bashrc
+declare -A aliases=(
+    ["ls"]="eza --icons --group-directories-first"
+    ["ll"]="eza -lbhF --git --icons --group-directories-first"
+    ["la"]="eza -abgh --icons --group-directories-first"
+    ["tree"]="eza --tree --icons"
+    ["cat"]="bat --style=plain --paging=never"
+    ["grep"]="rg"
+    ["rm"]="rm -i"
+)
+
+for name in "${!aliases[@]}"; do
+    if ! grep -q "alias ${name}=" ~/.bashrc; then
+        echo "alias ${name}='${aliases[$name]}'" >> ~/.bashrc
+        info "Added alias: ${name}='${aliases[$name]}'"
+    else
+        info "Alias already set: ${name}"
+    fi
+done
+
+info " --- Terminal & Shell Configured ---- "
+
+# exit 0  # Debug Exit
+info " --- Applications ---- "
+
+
+
+
 
 # --- DNF packages ---
 step "Installing additional dnf packages"
 sudo dnf install -y \
     btop \
-    cmake \
-    cpio \
-    meson \
-    gcc-c++ \
-    hyprland-devel \
-    wayland-devel \
-    wayland-protocols-devel \
-    libinput-devel \
-    libicu-devel \
     freerdp \
-    btrfs-assistant
+    btrfs-assistant \
 success "dnf packages installed"
 
 # --- Flatpak apps ---
