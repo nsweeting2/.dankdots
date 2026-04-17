@@ -49,14 +49,18 @@
 #  -  org.gnome.World.PikaBackup
 #  -  com.vscodium.codium
 
+# --- Misc Configuration ---
+# [ ] My DankMaterialShell settings.json file copied in
+# [ ] My hypr/hyprland.conf file copied in
+# [ ] My hypr/dms/*.conf files copied in
+
+
+
+
 # --- Security & Maintenance ---
 # [ ] sudo / polkit rules reviewed
 # [ ] DNF auto-updates configured
 # [ ] Snapshots configured
-
-# --- Misc Configuration ---
-# [ ] My hypr/hyprland.conf file copied in
-# [ ] My hypr/dms/*.conf files copied in
 
 
 # --- Exit if we error on anything ---
@@ -192,9 +196,6 @@ info " --- Terminal & Shell ---- "
 # [ ] Confirm we have kitty ghostty &
 sudo dnf install -y kitty ghostty
 
-# [ ] Install bash-completion & blesh
-sudo dnf install -y bash-completion blesh
-
 # [ ] Install fzf, bat, ripgrep, eza
 sudo dnf install -y fzf bat ripgrep eza
 
@@ -223,47 +224,46 @@ info " --- Terminal & Shell Configured ---- "
 # exit 0  # Debug Exit
 info " --- Applications ---- "
 
-
-
-
-
-# --- DNF packages ---
-step "Installing additional dnf packages"
+# [ ] Install with DNF
 sudo dnf install -y \
     btop \
     freerdp \
     btrfs-assistant \
-success "dnf packages installed"
 
-# --- Flatpak apps ---
-step "Installing flatpaks"
+# [ ] Install Flatpaks
 flatpak install -y flathub com.github.tchx84.Flatseal
 flatpak install -y flathub com.brave.Browser
 flatpak install -y flathub us.zoom.Zoom
 flatpak install -y flathub com.devolutions.remotedesktopmanager
 flatpak install -y flathub org.gnome.World.PikaBackup
 flatpak install -y flathub com.vscodium.codium
-success "Flatpak apps installed"
 
-# --- Copy dotfiles ---
-step "Copying dotfiles"
+info " --- Applications Installed ---- "
 
+# exit 0  # Debug Exit
+info " --- Misc Configuration ---- "
+
+# [ ] My DankMaterialShell settings.json file copied in
 mkdir -p ~/.config/DankMaterialShell
 cp "$DOTFILES_DIR/.config/DankMaterialShell/settings.json" \
     ~/.config/DankMaterialShell/settings.json
 info "Copied ~/.config/DankMaterialShell/settings.json"
 
-mkdir -p ~/.config/hypr/dms
+
+# [ ] My hypr/hyprland.conf file copied in
 cp "$DOTFILES_DIR/.config/hypr/hyprland.conf" \
     ~/.config/hypr/hyprland.conf
 info "Copied ~/.config/hypr/hyprland.conf"
 
+# [ ] My hypr/dms/*.conf files copied in
+mkdir -p ~/.config/hypr/dms
 for conf in "$DOTFILES_DIR/.config/hypr/dms/"*.conf; do
     cp "$conf" ~/.config/hypr/dms/"$(basename "$conf")"
     info "Copied ~/.config/hypr/dms/$(basename "$conf")"
 done
+info " --- Misc Configuration Complete ---- "
 
-success "Dotfiles copied"
+# exit 0  # Debug Exit
 
 echo ""
 echo "${BOLD}${GREEN}  ✓  Setup complete.${RESET}"
