@@ -96,6 +96,8 @@ sudo dnf install -y \
     danksearch
 
 dms greeter enable
+sudo sed -i 's/--command hyprland/--command hyprland-uwsm/' /etc/greetd/config.toml
+systemctl --user enable dms
 success "DankMaterialShell installed"
 
 # --- DNF packages ---
@@ -146,5 +148,10 @@ done
 success "Dotfiles copied"
 
 echo ""
-echo "${BOLD}${GREEN}  ✓  Setup complete. Reboot when ready.${RESET}"
+echo "${BOLD}${GREEN}  ✓  Setup complete.${RESET}"
 echo ""
+read -r -p "    Reboot now? (N/y, default: N): " response
+response=${response:-N}
+if [[ "${response,,}" == "y" ]]; then
+    sudo reboot
+fi
