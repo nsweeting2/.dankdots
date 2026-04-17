@@ -13,6 +13,8 @@
 # [ ] Enable RPM Fusion repos free and non-free
 # [ ] Enable Flathub for flapaks
 # [ ] Run DNF update
+# [ ] DNF auto-updates configured
+# [ ] Snapshots configured
 
 # --- Hyprland + Wayland Stack ----
 # [ ] Add hyprland COPR repo
@@ -53,15 +55,6 @@
 # [ ] My DankMaterialShell settings.json file copied in
 # [ ] My hypr/hyprland.conf file copied in
 # [ ] My hypr/dms/*.conf files copied in
-
-
-
-
-# --- Security & Maintenance ---
-# [ ] sudo / polkit rules reviewed
-# [ ] DNF auto-updates configured
-# [ ] Snapshots configured
-
 
 # --- Exit if we error on anything ---
 set -e
